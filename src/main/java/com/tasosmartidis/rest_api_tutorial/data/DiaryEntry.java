@@ -1,8 +1,12 @@
 package com.tasosmartidis.rest_api_tutorial.data;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection="entries") 
 public class DiaryEntry {
 
+	@Id
 	private String entryId;
 	private String entryTitle;
 	private String entryText;

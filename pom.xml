@@ -10,6 +10,7 @@
   
   <properties>
         <springframework.version>4.0.6.RELEASE</springframework.version>
+        <spring.data.version>1.8.1.RELEASE</spring.data.version> 
     </properties>
     
   <dependencies> 
@@ -34,6 +35,29 @@
 		<artifactId>spring-tx</artifactId>
 		<version>${springframework.version}</version>
 	</dependency>    
+	
+	<!-- Added for the MongoDB persistence - start --> 
+	<!-- Spring data mongodb -->
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-mongodb</artifactId>
+		<version>${spring.data.version}</version>
+	</dependency>	
+	<!-- Added for the MongoDB persistence - end -->
+	
+	<!-- logging -->
+	<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.5.6</version>
+        <type>jar</type>
+	</dependency>
+	<dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-simple</artifactId>
+         <version>1.5.6</version>
+	</dependency> 
+		
 	<!-- javax -->
     <dependency>
         <groupId>javax.servlet</groupId>
@@ -88,7 +112,14 @@
 				<downloadSources>true</downloadSources>
 				<downloadJavadocs>true</downloadJavadocs>
 			</configuration>
-		</plugin>		
+		</plugin>	
+		<plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <configuration>
+	          <failOnMissingWebXml>false</failOnMissingWebXml>
+	        </configuration>
+     	</plugin>	
 	</plugins>
   </build>
 </project>

@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository("dao")
+@Repository("daoMock")
 @Transactional
 public class DaoMock implements Dao {
 

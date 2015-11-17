@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tasosmartidis.rest_api_tutorial.data.DaoMock;
+import com.tasosmartidis.rest_api_tutorial.data.DaoMongo;
 import com.tasosmartidis.rest_api_tutorial.data.DiaryEntry;
 
 @RestController
@@ -19,7 +19,7 @@ import com.tasosmartidis.rest_api_tutorial.data.DiaryEntry;
 public class DiaryService {
 	
 	@Autowired
-	DaoMock dao; 
+	DaoMongo dao; 
 	
 	@RequestMapping(value="/entry/{entryId}", method=RequestMethod.GET)
 	public ResponseEntity<DiaryEntry> getDiaryEntry(@PathVariable String entryId) {

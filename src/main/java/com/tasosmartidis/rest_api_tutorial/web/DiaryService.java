@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tasosmartidis.rest_api_tutorial.data.DaoMongo;
 import com.tasosmartidis.rest_api_tutorial.data.DiaryEntry;
 
+
 @RestController
 @RequestMapping("/service/geek-diaries")
 public class DiaryService {
@@ -49,7 +50,7 @@ public class DiaryService {
 		return new ResponseEntity<String>(deletedDiaryEntry,HttpStatus.OK); 
 	}
 	
-	@RequestMapping(value="/entry/", method=RequestMethod.GET)
+	@RequestMapping(value="/entry/", method=RequestMethod.GET) 
 	public ResponseEntity<Map<String, DiaryEntry>> getDiaryEntries() { 
 		Map<String, DiaryEntry> diaryEntries = dao.getAllDiaryEntries();
 

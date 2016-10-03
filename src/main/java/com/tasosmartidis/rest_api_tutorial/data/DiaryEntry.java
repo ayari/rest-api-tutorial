@@ -3,6 +3,9 @@ package com.tasosmartidis.rest_api_tutorial.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
 @Document(collection="entries") 
 public class DiaryEntry {
 
@@ -39,6 +42,7 @@ public class DiaryEntry {
 				+ ((entryTitle == null) ? 0 : entryTitle.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -59,6 +63,21 @@ public class DiaryEntry {
 		} else if (!entryTitle.equals(other.entryTitle))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		String mappedJson=null;		
+		
+		try{
+			ObjectMapper mapper = new ObjectMapper();
+			ObjectWriter objectWriter = mapper.writer().withDefaultPrettyPrinter();
+			mappedJson = objectWriter.writeValueAsString(this);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		} 
+		
+		return mappedJson;
 	}
 	
 }

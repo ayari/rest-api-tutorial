@@ -67,6 +67,9 @@ public class DaoMongo implements Dao {
 		return putEntriesToMap(allEntries);
 	}
 	
+	// In the tutorial the Mock Dao was developed first, the interface defined 
+	// 'getAllDiaryEntries' to return a Map, and I created this method to "keep the 
+	// backwards compatibility" with the methods of the exposed API
 	private Map<String, DiaryEntry> putEntriesToMap(List<DiaryEntry> allEntries) {
 		Map<String, DiaryEntry> mapWithEntries = new HashMap<>();
 		

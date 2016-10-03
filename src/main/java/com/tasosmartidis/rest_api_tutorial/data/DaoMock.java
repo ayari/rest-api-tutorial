@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class DaoMock implements Dao {
 
-	private static Map<String, DiaryEntry> diaryEntries = new HashMap<String, DiaryEntry>();
+	private static final Map<String, DiaryEntry> diaryEntries = new HashMap<String, DiaryEntry>();
 		
 	public DiaryEntry createDiaryEntry(DiaryEntry newEntry) {
 		//set our own unique diary id

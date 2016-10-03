@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.PUT).hasAnyRole("USER","ADMIN")
 			.and()
 			.requiresChannel()
-			.antMatchers("/service").requiresSecure()
+			.antMatchers("/").requiresSecure()
 			.and()
 			.csrf().disable();
 			

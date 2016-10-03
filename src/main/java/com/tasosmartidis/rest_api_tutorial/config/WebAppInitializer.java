@@ -1,6 +1,5 @@
 package com.tasosmartidis.rest_api_tutorial.config;
 
-
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -12,7 +11,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class<?>[] {WebConfig.class};
+		return new Class<?>[] {WebConfig.class,SwaggerConfig.class};
 	}
 
 	@Override
